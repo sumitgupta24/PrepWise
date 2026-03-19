@@ -5,25 +5,34 @@ import { motion } from "motion/react"
 import { FcGoogle } from "react-icons/fc";
 import { auth, provider } from '../utils/firebase.js';
 import { signInWithPopup } from 'firebase/auth';
+import axios from 'axios';
+import { ServerURL } from '../App.jsx';
 
 function Auth() {
 
     const handleGoogleAuth = async () => {
         try {
             const response = await signInWithPopup(auth, provider);
-            console.log(response)
+            console.log("Sign-in successful:", response);
+            let user = response.user
+            let name = user.displayName || user.email.split('@')[0]
+            let email = user.email
+            console.log("User data extracted:", { name, email });
+            const result = await axios.post(ServerURL + "/api/auth/google", { name, email }, { withCredentials: true })
+            console.log("Server response:", result)
         } catch (error) {
-            console.log(error)
+            console.error("Error details:", error);
+            console.error("Error message:", error.message);
         }
     }
 
     return (
         <div className='w-full min-h-screen bg-[#f3f3f3] flex items-center justify-center px-6 py-20'>
             <motion.div
-            initial={{opacity:0 , y:-40}} 
-            animate={{opacity:1 , y:0}} 
-            transition={{duration:1.05}}
-            className='w-full max-w-md p-8 rounded-3xl bg-white shadow-2xl border border-gray-200'>
+                initial={{ opacity: 0, y: -40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.05 }}
+                className='w-full max-w-md p-8 rounded-3xl bg-white shadow-2xl border border-gray-200'>
                 <div className='flex items-center justify-center gap-3 mb-6'>
                     <div className='bg-black text-white p-2 rounded-lg'>
                         <BsRobot size={18} />
@@ -41,13 +50,13 @@ function Auth() {
                     Sign in to start AI-powered mock interviews,
                     track your progress, and unlock detailed performance insights.
                 </p>
-                 <motion.button 
-            onClick={handleGoogleAuth}
-            whileHover={{opacity:0.9 , scale:1.03}}
-            whileTap={{opacity:1 , scale:0.98}}
-            className='w-full flex items-center justify-center gap-3 py-3 bg-black text-white rounded-full shadow-md '>
-                <FcGoogle size={20}/>
-                Continue with Google
+                <motion.button
+                    onClick={handleGoogleAuth}
+                    whileHover={{ opacity: 0.9, scale: 1.03 }}
+                    whileTap={{ opacity: 1, scale: 0.98 }}
+                    className='w-full flex items-center justify-center gap-3 py-3 bg-black text-white rounded-full shadow-md '>
+                    <FcGoogle size={20} />
+                    Continue with Google
                 </motion.button>
             </motion.div>
         </div>
