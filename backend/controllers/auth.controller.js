@@ -11,14 +11,14 @@ export const googleAuth = async (req, res) => {
         }
         
         let user = await User.findOne({ email });
-        console.log("User found:", user);
+        // console.log("User found:", user);
 
         if (!user) {
             user = await User.create({
                 name,
                 email
             })
-            console.log("New user created:", user);
+            // console.log("New user created:", user);
         }
 
         let token = await generateToken(user._id);
