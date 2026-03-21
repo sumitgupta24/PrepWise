@@ -2,7 +2,6 @@ import fs from "fs"
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { askAI } from "../services/openRouter.service.js";
 import User from "../models/user.model.js";
-import Interview from "../models/interview.model.js";
 
 export const analyzeResume = async (req, res) => {
     try {
@@ -28,9 +27,11 @@ export const analyzeResume = async (req, res) => {
         }
 
         resumeText = resumeText
-            .replace(/\s+/g, " ")
+            .replace(/\r\n/g, '\n')
+            .replace(/\t/g, ' ')
+            .replace(/[ ]{2,}/g, ' ')
+            .replace(/\n{3,}/g, '\n\n')
             .trim();
-
         const messages = [
             {
                 role: "system",
@@ -55,7 +56,12 @@ Return strictly JSON:
 
         const aiResponse = await askAI(messages)
 
-        const parsed = JSON.parse(aiResponse)
+        const cleanJson = aiResponse
+            .replace(/```json/g, '')
+            .replace(/```/g, '')
+            .trim();
+
+        const parsed = JSON.parse(cleanJson);
 
         fs.unlinkSync(filePath)
 
@@ -77,3 +83,6 @@ Return strictly JSON:
     }
 }
 
+export const generateQuestions = async (req, res) => {
+
+}
