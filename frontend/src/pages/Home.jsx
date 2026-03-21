@@ -21,6 +21,7 @@ import resumeImg from "../assets/resume.png";
 import pdfImg from "../assets/pdf.png";
 import analyticsImg from "../assets/history.png";
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 function Home() {
   const { userData } = useSelector((state) => state.user)
@@ -299,6 +300,7 @@ function Home() {
         </div>
       </div>
       {showAuth && <AuthModel onClose={() => setShowAuth(false)} />}
+        <Footer/>
     </div>
   )
 }
