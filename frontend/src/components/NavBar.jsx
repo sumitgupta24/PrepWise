@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ServerURL } from '../App';
 import { setUserData } from '../redux/userSlice';
+import AuthModel from './AuthModel';
 
 function NavBar() {
     const { userData } = useSelector((state) => state.user)
