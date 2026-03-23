@@ -86,9 +86,9 @@ Return strictly JSON:
 
 export const generateQuestions = async (req, res) => {
     try {
-        const { role, experience, mode, resumeText, projects, skills } = req.body;
+        let { role, experience, mode, resumeText, projects, skills } = req.body;
 
-        role = role?.trime();
+        role = role?.trim();
         experience = experience?.trim();
         mode = mode?.trim();
 
@@ -230,9 +230,9 @@ Make questions based on the candidate’s role, experience,interviewMode, projec
 
 export const submitAnswer = async (req, res) => {
     try {
-        const { interviewId, questionIndex, answer, timeTake } = req.body
+        const { interviewId, questionIndex, answer, timeTaken } = req.body
 
-        const interview = await Interview.findById({ interviewId })
+        const interview = await Interview.findById(interviewId)
         const question = interview.questions[questionIndex]
 
         if (!answer) {
@@ -315,7 +315,11 @@ Answer: ${answer}
         ];
 
         const aiResponse = await askAI(messages)
-        const parsed = JSON.parse(aiResponse);
+        const cleanJson = aiResponse
+            .replace(/```json/g, '')
+            .replace(/```/g, '')
+            .trim();
+        const parsed = JSON.parse(cleanJson);
 
 
         question.answer = answer;
@@ -343,7 +347,7 @@ export const finishInterview = async (req, res) => {
     try {
         const { interviewId } = req.body;
 
-        const interview = await Interview.findById({ interviewId })
+        const interview = await Interview.findById(interviewId)
 
         if (!interview) {
             return res.status(400).json({
