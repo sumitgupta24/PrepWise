@@ -3,13 +3,15 @@ import { useState } from 'react'
 import SetUp from '../components/SetUp'
 import Interview from '../components/Interview'
 import Report from '../components/Report'
+import NavBar from '../components/NavBar'
 
 function InterviewPage() {
     const [step,setStep] = useState(1)
     const [interviewData,setInterviewData] = useState(null)
 
   return (
-    <div className='min-h-screen bg-gray-50'>
+      <div className='min-h-screen bg-gray-50'>
+        <NavBar />
         {step===1 && (
             <SetUp onStart={(data)=>{
                 setInterviewData(data);
