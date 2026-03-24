@@ -1,14 +1,14 @@
-# 🚀 PrepWise – AI Interview Platform
+# PrepWise – AI Interview Platform
 
-An **AI-powered mock interview platform** that simulates real interview experiences with adaptive AI interviewers, real-time feedback, and performance analytics.
+An AI-powered mock interview platform that simulates real interview experiences with adaptive AI interviewers, real-time feedback, and performance analytics.
 
 ---
 
-## 📌 Overview
+## Overview
 
-PrepWise helps users **practice interviews smarter** by generating role-specific questions, evaluating answers using AI, and providing detailed performance insights.
+PrepWise helps users practice interviews smarter by generating role-specific questions, evaluating answers using AI, and providing detailed performance insights.
 
-### 🎯 Problem It Solves
+### Problem It Solves
 - Expensive mock interview coaching  
 - No real-time feedback on answers  
 - Lack of personalized interview prep  
@@ -16,21 +16,21 @@ PrepWise helps users **practice interviews smarter** by generating role-specific
 
 ---
 
-## ✨ Features
+## Features
 
-- 🤖 AI Question Generation (based on role, experience, resume)
-- 🎤 Voice-Based Interviews (Speech recognition + TTS)
-- 📊 Real-Time Answer Evaluation
-- 📄 Resume Upload & AI Analysis
-- 🧠 Adaptive Difficulty (Easy → Hard)
-- 📈 Performance Reports with Analytics
-- 📜 PDF Report Generation
-- 🕓 Interview History Tracking
-- 💳 Credit-Based System (Razorpay Integration)
+- AI Question Generation (based on role, experience, resume)
+- Voice-Based Interviews (Speech recognition + TTS)
+- Real-Time Answer Evaluation
+- Resume Upload & AI Analysis
+- Adaptive Difficulty (Easy to Hard)
+- Performance Reports with Analytics
+- PDF Report Generation
+- Interview History Tracking
+- Credit-Based System (Razorpay Integration)
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - React 19 + Vite
@@ -50,30 +50,30 @@ PrepWise helps users **practice interviews smarter** by generating role-specific
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
-### 1️⃣ Setup Interview
-- Select role & experience  
+### 1. Setup Interview
+- Select role and experience  
 - Upload resume (optional)  
 - Choose interview mode (HR / Technical)
 
-### 2️⃣ AI Generates Questions
+### 2. AI Generates Questions
 - 5 questions with increasing difficulty  
 - Based on role, skills, and resume  
 
-### 3️⃣ Interview Execution
+### 3. Interview Execution
 - AI asks questions (voice-enabled)  
 - User answers via speech or text  
 - Time-limited responses  
 
-### 4️⃣ AI Evaluation
+### 4. AI Evaluation
 - Scores on:
   - Confidence  
   - Communication  
   - Correctness  
 - Generates human-like feedback  
 
-### 5️⃣ Performance Report
+### 5. Performance Report
 - Final score  
 - Skill breakdown  
 - Trend analysis  
@@ -81,7 +81,7 @@ PrepWise helps users **practice interviews smarter** by generating role-specific
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 prepwise/
@@ -93,7 +93,7 @@ prepwise/
 
 ---
 
-## 🔐 Authentication & Security
+## Authentication and Security
 
 - Google OAuth via Firebase  
 - JWT-based authentication (HTTP-only cookies)  
@@ -102,7 +102,7 @@ prepwise/
 
 ---
 
-## 💳 Credit System
+## Credit System
 
 | Plan     | Credits | Price |
 |----------|--------|-------|
@@ -110,11 +110,11 @@ prepwise/
 | Starter  | 150    | ₹100  |
 | Pro      | 650    | ₹500  |
 
-- 🎯 50 credits per interview
+- 50 credits per interview
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation and Setup
 
 ### 1. Clone Repository
 ```bash
@@ -138,7 +138,7 @@ npm run dev
 
 ---
 
-## 🔑 Environment Variables
+## Environment Variables
 
 ### Backend (.env)
 ```
@@ -158,18 +158,18 @@ VITE_RAZORPAY_KEY_ID=your_key
 
 ---
 
-## 🧪 Testing Checklist
+## Testing Checklist
 
-- ✅ Google Login  
-- ✅ Resume Upload & Parsing  
-- ✅ Question Generation  
-- ✅ Answer Evaluation  
-- ✅ Report Generation  
-- ✅ Payment Integration  
+- Google Login  
+- Resume Upload and Parsing  
+- Question Generation  
+- Answer Evaluation  
+- Report Generation  
+- Payment Integration  
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend
 - Deploy on Render / Railway / Heroku  
@@ -179,9 +179,9 @@ VITE_RAZORPAY_KEY_ID=your_key
 
 ---
 
-## ⚡ Key Highlights
+## Key Highlights
 
-- Full-stack production-ready app  
+- Full-stack production-ready application  
 - Real-time AI evaluation system  
 - Speech-based interaction  
 - Secure payment integration  
@@ -189,13 +189,13 @@ VITE_RAZORPAY_KEY_ID=your_key
 
 ---
 
-## 🙌 Author
+## Author
 
-**Sumit Gupta**  
+Sumit Gupta  
 B.Tech CSE, VIT Vellore  
 
 ---
 
-## ⭐ If you like this project
+## Contribution
 
-Give it a ⭐ on GitHub and feel free to contribute!
+Feel free to contribute and improve this project.
