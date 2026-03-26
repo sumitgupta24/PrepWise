@@ -27,11 +27,11 @@ function Footer() {
 
           {/* Social icons */}
           <div className='flex items-center gap-4'>
-            <a href='https://github.com/cricsumit24' target='_blank' rel='noreferrer'
+            <a href='https://github.com/sumitgupta24' target='_blank' rel='noreferrer'
               className='p-2 rounded-full bg-gray-100 hover:bg-black hover:text-white transition'>
               <BsGithub size={16} />
             </a>
-            <a href='https://linkedin.com/in/cricsumit24' target='_blank' rel='noreferrer'
+            <a href='https://www.linkedin.com/in/sumit-gupta-24s12s25s30r16b' target='_blank' rel='noreferrer'
               className='p-2 rounded-full bg-gray-100 hover:bg-black hover:text-white transition'>
               <BsLinkedin size={16} />
             </a>
@@ -52,7 +52,7 @@ function Footer() {
           </p>
           <p>
             © {new Date().getFullYear()} PrepWise.AI — by{' '}
-            <a href='https://github.com/cricsumit24' target='_blank' rel='noreferrer'
+            <a href='https://github.com/sumitgupta24' target='_blank' rel='noreferrer'
               className='text-gray-600 font-medium hover:text-black transition'>
               Sumit Gupta
             </a>
