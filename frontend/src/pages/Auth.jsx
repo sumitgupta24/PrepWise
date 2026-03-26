@@ -13,7 +13,7 @@ import { setUserData } from '../redux/userSlice.js';
 function Auth({ isModel = false }) {
 
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const handleGoogleAuth = async () => {
         try {
             const response = await signInWithPopup(auth, provider);
@@ -25,6 +25,7 @@ function Auth({ isModel = false }) {
             const result = await axios.post(ServerURL + "/api/auth/google", { name, email }, { withCredentials: true })
             // console.log("Server response:", result)
             dispatch(setUserData(result.data))
+            const navigate = useNavigate()
         } catch (error) {
             console.error("Error details:", error);
             // console.error("Error message:", error.message);

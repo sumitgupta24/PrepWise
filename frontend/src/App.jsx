@@ -15,6 +15,7 @@ export const ServerURL = "http://localhost:8000"
 
 function App() {
   const dispatch = useDispatch()
+  const [authLoading, setAuthLoading] = useState(true)
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -24,18 +25,26 @@ function App() {
       } catch (error) {
         console.log(error)
         dispatch(setUserData(null))
+      } finally {
+        setAuthLoading(false) // ✅ done loading either way
       }
     }
     getUser()
   }, [dispatch])
+
+  if (authLoading) return (
+    <div className='min-h-screen flex items-center justify-center'>
+      <p className='text-gray-400'>Loading...</p>
+    </div>
+  )
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/auth' element={<Auth />} />
-      <Route path='/interview' element={<InterviewPage/>}/>
-      <Route path='/history' element={<InterviewHistory/>}/>
-      <Route path='/pricing' element={<Pricing/>}/>
-      <Route path='/report/:id' element={<InterviewReport/>}/>
+      <Route path='/interview' element={<InterviewPage />} />
+      <Route path='/history' element={<InterviewHistory />} />
+      <Route path='/pricing' element={<Pricing />} />
+      <Route path='/report/:id' element={<InterviewReport />} />
 
     </Routes>
   )
