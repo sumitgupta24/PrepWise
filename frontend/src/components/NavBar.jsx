@@ -21,7 +21,7 @@ function NavBar() {
 
     const handleLogout = async () => {
         try {
-            await axios.get(ServerURL + "/api/auth/logout", { withCredentials: true })
+            await axios.post(ServerURL + "/api/auth/logout", {}, { withCredentials: true })
             dispatch(setUserData(null))
             setShowCreditPopup(false)
             setShowUserPopup(false)

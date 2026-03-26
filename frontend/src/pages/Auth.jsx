@@ -9,6 +9,7 @@ import axios from 'axios';
 import { ServerURL } from '../App.jsx';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../redux/userSlice.js';
+import { useNavigate } from 'react-router-dom';
 
 function Auth({ isModel = false }) {
 

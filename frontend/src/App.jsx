@@ -10,8 +10,9 @@ import { setUserData } from './redux/userSlice'
 import InterviewHistory from './pages/InterviewHistory'
 import Pricing from './pages/Pricing'
 import InterviewReport from './pages/InterviewReport'
+import { useState } from 'react'
 
-export const ServerURL = "https://prepwise-fgkn.onrender.com"
+export const ServerURL = import.meta.env.VITE_SERVER_URL || "http://localhost:8000"
 
 function App() {
   const dispatch = useDispatch()
